@@ -14,3 +14,8 @@
         width: 500px;
     }
 }
+
+.ValidationError {
+    color: red;
+    margin: 5px 0;
+} 
