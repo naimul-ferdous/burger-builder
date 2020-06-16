@@ -5,7 +5,7 @@ import Spinner from '../../../UI/Spinner/Spinner';
 import Input from '../../../UI/input/input';
 import classes from './ContactData.module.css';
 import axios from '../../../../axios-orders';
-import withErrorHandler from '../../../../hoc/withErrorHandler';
+import withErrorHandler from '../../../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../../../store/actions/index';
 
 class ContactData extends Component {
@@ -187,7 +187,9 @@ const mapStateToProps= state=> {
 };
 
 const mapDispatchToProps= dispatch=> {
-    onOrderBurger: (orderData)=> dispatch(actions.purchaseBurgerStart(orderData))
+    return {
+        onOrderBurger: (orderData) => dispatch(actions.purchaseBurgerStart(orderData))
+    }
 };
 
 export default connect(mapStateToProps)(withErrorHandler(ContactData, axios));
