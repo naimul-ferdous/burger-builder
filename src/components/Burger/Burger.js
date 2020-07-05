@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 const Burger = (props) => {
-    console.log(props);
         
     let transformedIngredients= Object.keys(props.ingredients)
     .map(igKey=> {
@@ -16,7 +15,6 @@ const Burger = (props) => {
     if(transformedIngredients.length === 0) {
         transformedIngredients= <p>Please start adding ingredients</p>
     }
-    console.log(transformedIngredients);
     
     return (
         <div className={classes.Burger}>
